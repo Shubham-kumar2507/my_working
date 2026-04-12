@@ -1,0 +1,20 @@
+# Netlify Configuration for Vite + React App
+
+[build]
+  # Build command
+  command = "npm install && npm run build"
+  
+  # Directory to publish (build output)
+  publish = "dist"
+  
+[build.environment]
+  NODE_VERSION = "18"
+
+# Redirect all requests to index.html for client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Environment variables (these will be set in Netlify UI)
+# VITE_API_URL = "your-backend-api-url"
